@@ -5,35 +5,28 @@ module.exports = {
     development: {
         client: 'mysql',
         connection: {
-            host: '127.0.0.1',
+            host: 'localhost',
             user: 'root',
             password: '',
-            database: 'nextjs'
+            database: 'nextjs',
+            charset: 'utf8mb4',
+            dateStrings: true,
+            // host: 'localhost',
+            // user: 'marifat1_acp',
+            // password: 'b@r0k@hms',
+            // database: 'marifat1_acp',
+            // charset: 'utf8mb4',
+            // dateStrings: true,
         }
     },
-
-    staging: {
-        client: 'postgresql',
-        connection: {
-            database: 'my_db',
-            user: 'username',
-            password: 'password'
-        },
-        pool: {
-            min: 2,
-            max: 10
-        },
-        migrations: {
-            tableName: 'knex_migrations'
-        }
-    },
-
     production: {
-        client: 'postgresql',
+        client: 'mysql',
         connection: {
-            database: 'my_db',
-            user: 'username',
-            password: 'password'
+            user: 'marifat1_acp',
+            password: 'b@r0k@hms',
+            database: 'marifat1_acp',
+            charset: 'utf8mb4',
+            dateStrings: true
         },
         pool: {
             min: 2,

@@ -2,6 +2,7 @@
 exports.up = function(knex) {
   return knex.schema.createTable('posts', function (table) {
       table.increments();
+      table.string('image');
       table.string('title');
       table.text('content');
       table.timestamps(true, true);

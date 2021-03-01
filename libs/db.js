@@ -1,12 +1,15 @@
 const knex = require('knex')({
     client: 'mysql',
     connection: {
-      host : '127.0.0.1',
-      user : 'root',
-      password : '',
-      database : 'nextjs'
+        host : 'localhost', user : 'root', password : '', database : 'nextjs',
+        charset : 'utf8mb4', dateStrings: true
+        // host: 'localhost',
+        // user: 'marifat1_acp',
+        // password: 'b@r0k@hms',
+        // database: 'marifat1_acp',
+        // charset: 'utf8mb4',
+        // dateStrings: true
     }
-  });
-
+});
 
 export default knex
