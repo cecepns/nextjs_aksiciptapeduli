@@ -1,0 +1,11 @@
+.banner {
+    height: 350px;
+}
+@media (min-width: 567px) {
+    .banner {
+        background-image: url(https://psb.marifatussalaam.org/assets/frontend/image/headeracp.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 550px;
+    }
+}

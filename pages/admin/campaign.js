@@ -8,8 +8,9 @@ export async function getServerSideProps(ctx) {
 
     const auth = await authPage(ctx);
 
+    const getCampaign = await fetch('https://test.aksiciptapeduli.org/api/campaign')
     // const getCampaign = await fetch('https://aksiciptapeduli.org/api/campaign')
-    const getCampaign = await fetch('http://localhost:3000/api/campaign')
+    // const getCampaign = await fetch('http://localhost:3000/api/campaign')
     const result = await getCampaign.json()
 
     return {

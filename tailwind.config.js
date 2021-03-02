@@ -2,7 +2,7 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './component/**/*.{js,ts,jsx,tsx}'], 
   darkMode: false, // or 'media' or 'class'
   theme: {
-   
+  
     backgroundColor: theme => ({
       ...theme('colors'),
       'primary': '#3490dc',

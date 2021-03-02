@@ -3,7 +3,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 // import 'react-quill/dist/quill.bubble.css';
 
-export default function Editor({text, deskripsi}) {
+export default function Editor() {
 
     const quillRef = useRef(null);
 
@@ -28,8 +28,7 @@ export default function Editor({text, deskripsi}) {
 
             const result = await imageEmbed.json();
 
-            // const urlImage = 'http://localhost:3000/img/media/' + result.image
-            const urlImage = 'https://test.aksiciptapeduli.org/img/media/' + result.image
+            const urlImage = 'http://localhost:3000/img/media/' + result.image
 
             // let quill = ReactQuill.getEditor()
             // const quill = quillReff.current.getEditor();
@@ -77,15 +76,13 @@ export default function Editor({text, deskripsi}) {
 },[])
 
     let handleChange = (e) => {
-        text(e) // rich text
-        // usePosts(editor.getHTML()) // rich text console.log(editor.getText()); //
-        // plain text console.log(editor.getLength()); // number of characters
+        console.log(e) 
     }
 
     return (
         <div>
             <ReactQuill
-                value={deskripsi}
+                // value={deskripsi}
                 theme="snow"
                 modules={modules}
                 formats={format}

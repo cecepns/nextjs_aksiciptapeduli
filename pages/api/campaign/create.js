@@ -47,17 +47,18 @@ async function handler(req, res) {
         db.transaction(async function (trx) {
 
             await db('campaign')
+                .transacting(trx)
                 .insert({
-                image,
-                judul,
-                fundraiser,
-                slug,
-                deskripsi,
-                target,
-                terkumpul,
-                daritanggal,
-                sampaitanggal
-            })
+                    image,
+                    judul,
+                    fundraiser,
+                    slug,
+                    deskripsi,
+                    target,
+                    terkumpul,
+                    daritanggal,
+                    sampaitanggal
+                })
                 .then(trx.commit)
                 .catch(trx.rollback);
 
@@ -67,8 +68,8 @@ async function handler(req, res) {
                 res.json({type: 'success', message: 'campaign create successfully'})
             })
             .catch(function (error) {
-                res.status(200);
-                res.json({type: 'error', message: error})
+                res.status(405);
+                res.json({type: 'error', message: error.sqlMessage})
             });;
 
     });

@@ -4,7 +4,7 @@ exports.up = function(knex) {
         table.string('image');
         table.string('judul');
         table.string('fundraiser');
-        table.string('slug');
+        table.string('slug').unique();
         table.text('deskripsi');
         table.integer('target');
         table.integer('terkumpul');

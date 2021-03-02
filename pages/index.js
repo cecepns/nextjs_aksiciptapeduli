@@ -1,9 +1,11 @@
 import Campaign from '../component/frontend/campaign'
+import style from '../component/frontend/banner.module.scss'
 
 export async function getServerSideProps(ctx) {
 
     // const getCampaign = await fetch('https://aksiciptapeduli.org/api/campaign')
-    const getCampaign = await fetch('http://localhost:3000/api/campaign')
+    const getCampaign = await fetch('https://test.aksiciptapeduli.org/api/campaign')
+    // const getCampaign = await fetch('http://localhost:3000/api/campaign')
     const result = await getCampaign.json()
 
     return {
@@ -18,7 +20,7 @@ export default function home({campaign}) {
     return (
         <div>
             <div className="w-full h-20"></div>
-            <div className="h-banner flex justify-center items-center bg-gray-100">
+            <div className={style.banner +" "+"flex justify-center items-center bg-gray-100"} >
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 gap-4">
                         <div className="text-center md:text-left" >
