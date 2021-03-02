@@ -6,8 +6,9 @@ import {convertRupiah} from '../../../myLibrary/convert_rupiah'
 export async function getServerSideProps(ctx) {
 
     const slug = ctx.query.id
+    const getCampaign = await fetch('https://test.aksiciptapeduli.org/api/campaign/search/' + slug)
     // const getCampaign = await fetch('https://aksiciptapeduli.org/api/campaign/search/' + slug)
-    const getCampaign = await fetch('http://localhost:3000/api/campaign/search/' + slug)
+    // const getCampaign = await fetch('http://localhost:3000/api/campaign/search/' + slug)
     const result = await getCampaign.json()
 
     return {
