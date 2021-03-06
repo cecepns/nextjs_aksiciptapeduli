@@ -3,7 +3,8 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 // import 'react-quill/dist/quill.bubble.css';
 
-export default function Editor() {
+export default function Editor({sendDeskripsi, updateDeskripsi}) {
+    // console.log(sendDeskripsi)
 
     const quillRef = useRef(null);
 
@@ -21,14 +22,14 @@ export default function Editor() {
             const formData = new FormData();
 
             formData.append("image", file);
-            const imageEmbed = await fetch('../api/uploadfile/create', {
+            const imageEmbed = await fetch('../api/uploadfile/artikel', {
                 method: 'POST',
                 body: formData
             })
 
             const result = await imageEmbed.json();
 
-            const urlImage = 'http://localhost:3000/img/media/' + result.image
+            const urlImage = 'http://localhost:3000/img/artikel/' + result.image
 
             // let quill = ReactQuill.getEditor()
             // const quill = quillReff.current.getEditor();
@@ -76,13 +77,13 @@ export default function Editor() {
 },[])
 
     let handleChange = (e) => {
-        console.log(e) 
+        sendDeskripsi(e)
     }
 
     return (
         <div>
             <ReactQuill
-                // value={deskripsi}
+                value={updateDeskripsi}
                 theme="snow"
                 modules={modules}
                 formats={format}

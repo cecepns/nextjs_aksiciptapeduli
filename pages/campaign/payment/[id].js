@@ -53,6 +53,10 @@ export default function Pembayaran({slug, id}) {
         useShowListPay(false)
     }
 
+    const handleConfirmDonasi = ()=> {
+        window.open('https://wa.me/6282320617770')
+    }
+
     // const midtrans = async() => {     const post = await
     // fetch('../../api/payment')     const result = await post.json();
     // Swal.fire({title: result.type, icon: result.type, text: result.message})
@@ -294,7 +298,7 @@ export default function Pembayaran({slug, id}) {
                     <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                         {showPay
                             ? <button
-                                    onClick={handleSubmitDonasi}
+                                    onClick={handleConfirmDonasi}
                                     type="button"
                                     className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-500 text-base font-medium text-white sm:text-sm">
                                     Konfirmasi Donasi

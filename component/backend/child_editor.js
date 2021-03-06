@@ -21,15 +21,15 @@ export default function Editor({text, deskripsi}) {
             const formData = new FormData();
 
             formData.append("image", file);
-            const imageEmbed = await fetch('../api/uploadfile/create', {
+            const imageEmbed = await fetch('../api/uploadfile/media', {
                 method: 'POST',
                 body: formData
             })
 
             const result = await imageEmbed.json();
 
-            // const urlImage = 'http://localhost:3000/img/media/' + result.image
-            const urlImage = 'https://test.aksiciptapeduli.org/img/media/' + result.image
+            const urlImage = 'http://localhost:3000/img/media/' + result.image
+            // const urlImage = 'https://aksiciptapeduli.org/img/media/' + result.image
 
             // let quill = ReactQuill.getEditor()
             // const quill = quillReff.current.getEditor();

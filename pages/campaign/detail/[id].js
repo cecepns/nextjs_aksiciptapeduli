@@ -6,9 +6,9 @@ import {convertRupiah} from '../../../myLibrary/convert_rupiah'
 export async function getServerSideProps(ctx) {
 
     const slug = ctx.query.id
-    const getCampaign = await fetch('https://test.aksiciptapeduli.org/api/campaign/search/' + slug)
+    // const getCampaign = await fetch('https://test.aksiciptapeduli.org/api/campaign/search/' + slug)
     // const getCampaign = await fetch('https://aksiciptapeduli.org/api/campaign/search/' + slug)
-    // const getCampaign = await fetch('http://localhost:3000/api/campaign/search/' + slug)
+    const getCampaign = await fetch('http://localhost:3000/api/campaign/search/' + slug)
     const result = await getCampaign.json()
 
     return {
@@ -87,13 +87,14 @@ export default function campaign({campaign}) {
     } else {
         content = <div
             className="h-screen bg-white-300 mx-auto my-auto w-full flex justify-center items-center">
-            Mohon maaf, berita tidak di temukan.
+            Mohon maaf, campaign tidak di temukan.
         </div>
     }
 
     return (
 
-        <div className="container mx-auto mt-20 py-10 px-5">
+        <div className="container mx-auto  py-10 px-5">
+            <div className="w-full h-20"></div>
             <div className="w-full md:w-3/5 mx-auto">
                 {content}
             </div>

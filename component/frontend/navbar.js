@@ -55,7 +55,7 @@ export default function Navbar() {
 
         <div className={style.wrapper}>
             <div className={style.logoWrapper}>
-               
+                <img src="/acp.png" alt="logo tidak di temukan"/>               
             </div>
 
             <div

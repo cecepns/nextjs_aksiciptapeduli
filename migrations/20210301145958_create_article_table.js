@@ -4,7 +4,7 @@ exports.up = function(knex) {
         table.increments();
         table.string('image');
         table.string('judul');
-        table.string('slug').unique();
+        table.string('slug');
         table.string('deskripsi');
         table.timestamps(true, true);
     })

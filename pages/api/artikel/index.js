@@ -14,8 +14,8 @@ export default async function handler(req,res) {
     if (page < 1) page = 1
     const offset = (page - 1) * perPage;
 
-    const total = await db('campaign').count('id as total')
-    const data = await db('campaign').offset(offset).limit(perPage).orderBy('id', 'desc');
+    const total = await db('artikel').count('id as total')
+    const data = await db('artikel').offset(offset).limit(perPage).orderBy('id', 'desc');
 
     res.status(200);
     res.json({

@@ -18,6 +18,7 @@ async function handler(req, res) {
     db.transaction(async function (trx) {
 
         await db('muwakif')
+            .transacting(trx)
             .insert({
             idCampaign,
             slug,
